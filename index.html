@@ -6,33 +6,95 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body>  
     <div class="container">
     <div class="display">
-      <p class="calculation"></p>
+      <p class="js-calculation calculation"></p>
     </div>
     <div class="keys">
-        <button class="calculator-button orange-button">C</button>
-        <button class="calculator-button orange-button">%</button>
-        <button class="calculator-button orange-button">⌫</button>
-        <button class="calculator-button orange-button">/</button>
-        <button class="calculator-button gray-button">7</button>
-        <button class="calculator-button gray-button">8</button>
-        <button class="calculator-button gray-button">9</button>
-        <button class="calculator-button orange-button">x</button>
-        <button class="calculator-button gray-button">4</button>
-        <button class="calculator-button gray-button">5</button>
-        <button class="calculator-button gray-button">6</button>
-        <button class="calculator-button orange-button">-</button>
-        <button class="calculator-button gray-button">1</button>
-        <button class="calculator-button gray-button">2</button>
-        <button class="calculator-button gray-button">3</button>
-        <button class="calculator-button orange-button">+</button>
-        <button class="calculator-button gray-button">00</button>
-        <button class="calculator-button gray-button">0</button>
-        <button class="calculator-button gray-button">.</button>
-        <button class="calculator-button equal-button">=</button>
+        <button class="calculator-button orange-button" onclick="
+        clearCalculation();
+      ">C</button>
+
+      <button class="calculator-button orange-button" onclick="
+        percentCalculation();
+      ">%</button>
+      
+      <button class="calculator-button orange-button" onclick="
+       backspace();
+      ">⌫</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' / ');
+      ">/</button>
+
+       <button class="calculator-button gray-button" onclick="
+        updateCalculation('7');
+      ">7</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('8');
+      ">8</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('9');
+      ">9</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' * ');
+      ">x</button>
+
+       <button class="calculator-button gray-button" onclick="
+        updateCalculation('4');
+      ">4</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('5');
+      ">5</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('6');
+      ">6</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' - ');
+      ">-</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('1');
+      ">1</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('2');
+      ">2</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('3');
+      ">3</button>
+
+      <button class="calculator-button orange-button" onclick="
+        updateCalculation(' + ');
+      ">+</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('00');
+      ">00</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('0');
+      ">0</button>
+
+      <button class="calculator-button gray-button" onclick="
+        updateCalculation('.');
+      ">.</button>
+
+      <button class="calculator-button equal-button" onclick="
+        calculation = eval(calculation);
+        displayCalculation();
+        localStorage.setItem('calculation', calculation);
+      ">=</button>
     </div>
   </div>
+  <script src="index.js"></script>
   </body>
 </html>
